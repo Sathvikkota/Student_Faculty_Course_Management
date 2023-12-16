@@ -39,3 +39,18 @@ def viewfaculty(request):
     faculty=Faculty.objects.all()
     count = Faculty.objects.count()
     return render(request,"viewfaculty.html",{"facultydata":faculty,"count":count})
+
+def admincourse(request):
+    return render(request,"admincourse.html")
+
+def adminstudent(request):
+    return render(request,"adminstudent.html")
+
+def adminfaculty(request):
+    return render(request,"adminfaculty.html")
+
+def addcourse(request):
+    return render(request,"addcourse.html")
+
+def insertcourse(request):
+    return HttpResponse("Insert Course")
