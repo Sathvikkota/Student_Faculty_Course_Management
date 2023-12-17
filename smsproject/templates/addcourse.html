@@ -1,6 +1,6 @@
 {% extends 'adminhome.html' %}
 {% block 'body' %}
-
+<h3 align="center" style="color:red">{{message}}</h3>
 <h3 align="center"><u>  Add Course</u></h3>
 
 <form method="post" action="{% url 'insertcourse' %}">
@@ -11,7 +11,7 @@
                 <label>Select Department</label>
             </td>
             <td>
-                <select name="department" required>
+                <select name="dept" required>
                     <option value="">--Select--</option>
                     <option value="CSE(R)">CSE(Regular)</option>
                     <option value="CSE(H)">CSE(Honors)</option>
@@ -37,7 +37,7 @@
                 <label>Select Academic Year</label>
             </td>
             <td>
-                <select name="academicyear" required>
+                <select name="ay" required>
                     <option value="">--Select--</option>
                     <option value="2021-2022">2021-2022</option>
                     <option value="2022-2023">2022-2023</option>
@@ -50,7 +50,7 @@
                 <label>Select Semester</label>
             </td>
             <td>
-                <select name="semester" required>
+                <select name="sem" required>
                     <option value="">--Select--</option>
                     <option value="ODD">ODD</option>
                     <option value="EVEN">EVEN</option>

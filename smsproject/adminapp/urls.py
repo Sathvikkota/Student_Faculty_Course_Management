@@ -10,6 +10,8 @@ urlpatterns = [
     path("viewcourses",views.viewcourses,name="viewcourses"),
     path("addcourse",views.addcourse,name="addcourse"),
     path("insertcourse",views.insertcourse,name="insertcourse"),
+    path("deletecourse",views.deletecourse,name="deletecourse"),
+    path("coursedeletion/<int:cid>",views.coursedeletion,name="coursedeletion"),
 
     path("adminstudent",views.adminstudent,name="adminstudent"),
     path("viewstudents",views.viewstudents,name="viewstudents"),
