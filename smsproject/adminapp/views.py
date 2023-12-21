@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
 from .models import Admin, Student, Course, Faculty
-
+from .forms import AddFacultyForm
 
 # Create your views here.
 def adminhome(request):
@@ -78,4 +78,25 @@ def coursedeletion(request,cid):
 
     Course.objects.filter(id=cid).delete()
     return redirect(deletecourse)   #deletecourse is a url name not based on html page name
+    #return HttpResponse("Course Deleted Successfully")
+
+def addfaculty(request):
+    form = AddFacultyForm()  # non parameterized constructor
+    if request.method=="POST":
+        form1=AddFacultyForm(request.POST)# parameterized constructor
+        if form1.is_valid():
+            form1.save()  # saves data to faculty_table
+            message="Faculty Added Successfully"
+            return render(request,"addfaculty.html",{"msg":message,"form":form})
+    return render(request,"addfaculty.html",{"form":form})
+
+def deletefaculty(request):
+    faculty=Faculty.objects.all()
+    count = Faculty.objects.count()
+    return render(request,"deletefaculty.html",{"facultydata":faculty,"count":count})
+
+def facultydeletion(request,fid):
+
+    Faculty.objects.filter(id=fid).delete()
+    return redirect(deletefaculty)   #deletefaculty is a url name not based on html page name
     #return HttpResponse("Course Deleted Successfully")

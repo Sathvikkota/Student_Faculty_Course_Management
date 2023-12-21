@@ -18,6 +18,9 @@ urlpatterns = [
 
     path("adminfaculty",views.adminfaculty,name="adminfaculty"),
     path("viewfaculty",views.viewfaculty,name="viewfaculty"),
+    path("addfaculty",views.addfaculty,name="addfaculty"),
+    path("deletefaculty",views.deletefaculty,name="deletefaculty"),
+    path("facultydeletion/<int:fid>",views.facultydeletion,name="facultydeletion"),
 
 
 
